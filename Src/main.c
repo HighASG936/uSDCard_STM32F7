@@ -20,12 +20,6 @@ UART_HandleTypeDef huart3;
 
 SDRAM_HandleTypeDef hsdram1;
 
-/* USER CODE BEGIN PV */
-/* Private variables ---------------------------------------------------------*/
-
-/* USER CODE END PV */
-
-/* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_SDMMC1_SD_Init(void);
