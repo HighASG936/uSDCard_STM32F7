@@ -5,12 +5,6 @@
 #include "stm32746g_discovery_sdram.h"
 #include "stm32746g_discovery_ts.h"
 
-/* USER CODE BEGIN Includes */
-
-/* USER CODE END Includes */
-
-/* Private variables ---------------------------------------------------------*/
-
 DMA2D_HandleTypeDef hdma2d;
 
 I2C_HandleTypeDef hi2c3;
@@ -85,16 +79,9 @@ int main(void)
   MX_FMC_Init();
 
   /* USER CODE BEGIN 2 */
-	BSP_LCD_Init();
-	BSP_LCD_LayerDefaultInit(1, SDRAM_DEVICE_ADDR);
-	BSP_LCD_SelectLayer(1);
-	BSP_LCD_Clear(LCD_COLOR_WHITE);
   /* USER CODE END 2 */
-	if(BSP_TS_Init(BSP_LCD_GetXSize(),BSP_LCD_GetYSize()) == TS_DEVICE_NOT_FOUND)
-	{
-		__asm("NOP");
-	}
-	BSP_TS_ITConfig();
+	BSP_TS_Init(BSP_LCD_GetXSize(),BSP_LCD_GetYSize());
+
 	SamplingImagen("paisaje1.bmp",272,480);
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
